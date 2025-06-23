@@ -1,8 +1,10 @@
 \documentclass{prometheus_cv}
 \usepackage[utf8]{inputenc}
 \usepackage[a4paper, total={5.3in, 10in}, top=2cm]{geometry}		% width=5.3in, height=10in, top margin=2cm on each page
+\usepackage{academicons}
+\usepackage{xcolor}	
 
-\usepackage{xcolor}																				  % define some colors
+\definecolor{cardinal}{rgb}{0.77, 0.12, 0.23}
 \definecolor{highlight}{HTML}{283559}
 \definecolor{highlight2}{HTML}{1A2640}
 \definecolor{link}{HTML}{5C6273}
@@ -13,10 +15,8 @@
 \usepackage[super]{nth}							% when you write \nth{2} you get a nice superscript
 \usepackage[								% coloring of links
 	colorlinks = true,
-	linkcolor = highlight,
-	urlcolor = highlight,
-	citecolor= highlight
-]{hyperref}
+	allcolors = cardinal
+]{hyperref} %coloring of links
 
 \usepackage{fontspec}							% package to change fonts				
 \setmainfont[
@@ -35,7 +35,7 @@
 \usepackage{fancyhdr}																		  
 \fancyhf{}
 \rhead{Curriculum Vit\ae}
-\lhead{Prometheus Fire}
+\lhead{Sushant Singh}
 \rfoot{Page \thepage}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
@@ -65,11 +65,25 @@
 \section{Employment}
 \input{employment.tex}
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%% PUBLICATIONS %%%%%%%%%%%% 
+%%%%%%%%%%%% RESEARCH INTEREST %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Publications}
-\input{publications.tex}
+\section{Research Interest}
+\input{reserarchinterest.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% RESEARCH %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Research}
+\input{research.tex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%% SEMINARS AND PRESENTATIONS %%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Seminars and Presentations}
+\input{seminar.tex}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%% HONORS and SCHOLARSHIPS %%%%%%%%%%%% 
@@ -84,17 +98,14 @@
 \input{skills.tex}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%% SERVICE %%%%%%%%%%%% 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Service To The Scientific Community}
-\input{service}
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%% EXTRAS %%%%%%%%%%%% 
+%%%%%%%%%%%% LAST UPDATED %%%%%%%%%%%% 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Extracurricular Activities}
-\input{extra.tex}
+\begin{center}
+  \begin{footnotesize}
+    Last updated: \today \\
+  \end{footnotesize}
+\end{center}
 
 \end{document}

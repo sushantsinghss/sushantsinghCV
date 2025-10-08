@@ -44,6 +44,21 @@
 	\end{small}
 }
 
+
+\newcommand{\course}[4]{%	
+	\cvsubsectionnarrow[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
+	\begin{minipage}{5cm}
+		\vspace*{-.7ex}\hspace*{-3cm}\footnotesize #1
+	\end{minipage}
+}
+
+\newcommand{\award}[4]{%	
+	\cvsubsectionnarrow[#2]{#3 \hfill \small{\textlf{\scshape{#2}}}}%
+	\begin{minipage}{5cm}
+		\vspace*{-.7ex}\hspace*{-3cm}\footnotesize #1
+	\end{minipage}
+}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% DEFINE OUR OWN SUBSECTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

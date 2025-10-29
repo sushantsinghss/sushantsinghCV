@@ -15,12 +15,12 @@ jobs:
           work_in_root_file_dir: true
       - name: Check pdf file
         run: |
-          file ${{ github.workspace }}/TeX-files/sushantCV.pdf | grep -q ' PDF '
+          file ${{ github.workspace }}/TeX-files/main.pdf | grep -q ' PDF '
       - name: Upload pdf. file to repository
         run: |
           git config --global user.name "sushantsinghss"
           git config --global user.email "sushantsinghs@me.com"
-          git add ${{ github.workspace }}/TeX-files/sushantCV.pdf
+          git add ${{ github.workspace }}/TeX-files/main.pdf
           git commit -m "commit message"
           git config pull.rebase false
           git pull
@@ -31,7 +31,7 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: '${{ github.workspace }}/TeX-files/sushantCV.pdf'
+          source_file: '${{ github.workspace }}/TeX-files/main.pdf'
           destination_repo: 'sushantsinghss/sushantsinghss.github.io'
           destination_folder: 'assets/pdf'
           destination_branch: master

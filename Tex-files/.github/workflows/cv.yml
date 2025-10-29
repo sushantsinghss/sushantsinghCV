@@ -1,0 +1,39 @@
+name: Build LaTeX document
+on: [push]
+jobs:
+  build_latex:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Git repository
+        uses: actions/checkout@v4
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ github.workspace }}/TeX-files/main.tex
+          latexmk_use_xelatex: true
+          working_directory: ${{ github.workspace }}/TeX-files/
+          work_in_root_file_dir: true
+      - name: Check pdf file
+        run: |
+          file ${{ github.workspace }}/TeX-files/sushantCV.pdf | grep -q ' PDF '
+      - name: Upload pdf. file to repository
+        run: |
+          git config --global user.name "sushantsinghss"
+          git config --global user.email "sushantsinghs@me.com"
+          git add ${{ github.workspace }}/TeX-files/sushantCV.pdf
+          git commit -m "commit message"
+          git config pull.rebase false
+          git pull
+          git push
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+      - name: Pushes updated CV file to my academic webpage
+        uses: dmnemec/copy_file_to_another_repo_action@main
+        env:
+          API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          source_file: '${{ github.workspace }}/TeX-files/sushantCV.pdf'
+          destination_repo: 'sushantsinghss/sushantsinghss.github.io'
+          destination_folder: 'assets/pdf'
+          destination_branch: master
+          user_email: 'sushantsinghs@me.com'
+          user_name: 'sushantsinghss'
